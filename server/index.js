@@ -1,8 +1,15 @@
+// SERVER INDEX.JS File
+// Entry point for application, will be responsible for starting the server and handling errors.
+
+// Module Dependecies
+
 import http from 'http';
 import app from '../app';
 
 // Express app setup
 
+
+// Simple logger function.
 
 function log(message) {
   process.stdout.write(`${message}\n`);
@@ -22,7 +29,6 @@ function normalizePort(val) {
   }
   return false;
 }
-
 
 // Get port from environment and store in Express.
 const port = normalizePort(process.env.PORT || 3000);

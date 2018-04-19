@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "babel-node ./server/index.js",
+    "build": "NODE_ENV=production npx env-cmd .env webpack --config ./webpack/config-prod.babel.js",
+    "postinstall": "npm run build",
     "lint": "eslint . --ext .js,.jsx",
     "dev": "nodemon --exec babel-node ./server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-  "myapp": "./bin/www"
-},
+    "myapp": "./bin/www"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jperryman23/bestExchanges-client.git"
@@ -25,7 +27,31 @@
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "express": "^4.16.3"
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "css-loader": "^0.28.11",
+    "dotenv": "^5.0.1",
+    "env-cmd": "^7.0.0",
+    "express": "^4.16.3",
+    "file-loader": "^1.1.11",
+    "morgan": "^1.9.0",
+    "node-sass": "^4.8.3",
+    "prop-types": "^15.6.1",
+    "pug": "^2.0.3",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "svg-inline-loader": "^0.8.0",
+    "webpack": "^4.6.0",
+    "webpack-dev-middleware": "^3.1.2",
+    "webpack-hot-middleware": "^2.22.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
@@ -33,9 +59,11 @@
     "babel-preset-stage-0": "^6.24.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
+    "eslint-loader": "^2.0.0",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
-    "nodemon": "^1.17.3"
+    "nodemon": "^1.17.3",
+    "webpack-cli": "^2.0.14"
   }
 }

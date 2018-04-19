@@ -1,3 +1,5 @@
+// File for all your routes.
+
 import express from 'express';
 
 const router = express.Router();
