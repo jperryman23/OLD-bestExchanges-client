@@ -16,6 +16,7 @@ export default {
     new webpack.optimize.UglifyJsPlugin(),
   ],
   module: {
+    mode: 'production',
     rules: [
       {
         test: /\.js$/,
